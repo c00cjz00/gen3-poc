@@ -38,23 +38,80 @@ sed -i 's/ TYPE=InnoDB//g' db/mysql/indexd_db.sql
 sed -i 's/ TYPE=InnoDB//g' db/mysql/metadata.sql
 sed -i 's/ TYPE=InnoDB//g' db/mysql/metadata_db.sql
 
-sed -i "s/jsonb DEFAULT '{}'/text/g" db/mysql/arborist_db.sql
-sed -i "s/jsonb DEFAULT '{}'/text/g" db/mysql/fence_db.sql
-sed -i "s/jsonb DEFAULT '{}'/text/g" db/mysql/indexd_db.sql
-sed -i "s/jsonb DEFAULT '{}'/text/g" db/mysql/metadata.sql
-sed -i "s/jsonb DEFAULT '{}'/text/g" db/mysql/metadata_db.sql
+sed -i "s/jsonb DEFAULT '{}'/JSON/g" db/mysql/arborist_db.sql
+sed -i "s/jsonb DEFAULT '{}'/JSON/g" db/mysql/fence_db.sql
+sed -i "s/jsonb DEFAULT '{}'/JSON/g" db/mysql/indexd_db.sql
+sed -i "s/jsonb DEFAULT '{}'/JSON/g" db/mysql/metadata.sql
+sed -i "s/jsonb DEFAULT '{}'/JSON/g" db/mysql/metadata_db.sql
 
-sed -i 's/jsonb/text/g' db/mysql/arborist_db.sql
-sed -i 's/jsonb/text/g' db/mysql/fence_db.sql
-sed -i 's/jsonb/text/g' db/mysql/indexd_db.sql
-sed -i 's/jsonb/text/g' db/mysql/metadata.sql
-sed -i 's/jsonb/text/g' db/mysql/metadata_db.sql
+sed -i 's/jsonb/JSON/g' db/mysql/arborist_db.sql
+sed -i 's/jsonb/JSON/g' db/mysql/fence_db.sql
+sed -i 's/jsonb/JSON/g' db/mysql/indexd_db.sql
+sed -i 's/jsonb/JSON/g' db/mysql/metadata.sql
+sed -i 's/jsonb/JSON/g' db/mysql/metadata_db.sql
+
+sed -i 's/_pkey//g' db/mysql/arborist_db.sql
+sed -i 's/_pkey//g' db/mysql/fence_db.sql
+sed -i 's/_pkey//g' db/mysql/indexd_db.sql
+sed -i 's/_pkey//g' db/mysql/metadata.sql
+sed -i 's/_pkey//g' db/mysql/metadata_db.sql
+
 
 sed -i 's/text\[\]/text/g' db/mysql/arborist_db.sql
 sed -i 's/text\[\]/text/g' db/mysql/fence_db.sql
 sed -i 's/text\[\]/text/g' db/mysql/indexd_db.sql
 sed -i 's/text\[\]/text/g' db/mysql/metadata.sql
 sed -i 's/text\[\]/text/g' db/mysql/metadata_db.sql
+
+sed -i 's/\[\]//g' db/mysql/arborist_db.sql
+sed -i 's/\[\]//g' db/mysql/fence_db.sql
+sed -i 's/\[\]//g' db/mysql/indexd_db.sql
+sed -i 's/\[\]//g' db/mysql/metadata.sql
+sed -i 's/\[\]//g' db/mysql/metadata_db.sql
+
+
+sed -i 's/varchar()/varchar(255)/g' db/mysql/arborist_db.sql
+sed -i 's/varchar()/varchar(255)/g' db/mysql/fence_db.sql
+sed -i 's/varchar()/varchar(255)/g' db/mysql/indexd_db.sql
+sed -i 's/varchar()/varchar(255)/g' db/mysql/metadata.sql
+sed -i 's/varchar()/varchar(255)/g' db/mysql/metadata_db.sql
+
+
+sed -i "s/DEFAULT date_part('epoch'//g" db/mysql/arborist_db.sql
+sed -i "s/DEFAULT date_part('epoch'//g" db/mysql/fence_db.sql
+sed -i "s/DEFAULT date_part('epoch'//g" db/mysql/indexd_db.sql
+sed -i "s/DEFAULT date_part('epoch'//g" db/mysql/metadata.sql
+sed -i "s/DEFAULT date_part('epoch'//g" db/mysql/metadata_db.sql
+
+
+sed -i "s/path gen3_arborist_db.ltree NOT NULL/path text NOT NULL/g" db/mysql/arborist_db.sql
+sed -i "s/path gen3_arborist_db.ltree NOT NULL/path  NOT NULL/g" db/mysql/fence_db.sql
+sed -i "s/path gen3_arborist_db.ltree NOT NULL/path text NOT NULL/g" db/mysql/indexd_db.sql
+sed -i "s/path gen3_arborist_db.ltree NOT NULL/path text NOT NULL/g" db/mysql/metadata.sql
+sed -i "s/path gen3_arborist_db.ltree NOT NULL/path text NOT NULL/g" db/mysql/metadata_db.sql
+
+
+sed -i 's/varchar(255) NOT NULL/varchar(255)/g' db/mysql/arborist_db.sql
+sed -i 's/varchar(255) NOT NULL/varchar(255)/g' db/mysql/fence_db.sql
+sed -i 's/varchar(255) NOT NULL/varchar(255)/g' db/mysql/indexd_db.sql
+sed -i 's/varchar(255) NOT NULL/varchar(255)/g' db/mysql/metadata.sql
+sed -i 's/varchar(255) NOT NULL/varchar(255)/g' db/mysql/metadata_db.sql
+
+sed -i 's/key varchar(255)/key_tag varchar(255)/g' db/mysql/arborist_db.sql
+sed -i 's/key varchar(255)/key_tag varchar(255)/g' db/mysql/fence_db.sql
+sed -i 's/key varchar(255)/key_tag varchar(255)/g' db/mysql/indexd_db.sql
+sed -i 's/key varchar(255)/key_tag varchar(255)/g' db/mysql/metadata.sql
+sed -i 's/key varchar(255)/key_tag varchar(255)/g' db/mysql/metadata_db.sql
+
+
+sed -i 's/value varchar(255)/value_tag varchar(255)/g' db/mysql/arborist_db.sql
+sed -i 's/value varchar(255)/value_tag varchar(255)/g' db/mysql/fence_db.sql
+sed -i 's/value varchar(255)/value_tag varchar(255)/g' db/mysql/indexd_db.sql
+sed -i 's/value varchar(255)/value_tag varchar(255)/g' db/mysql/metadata.sql
+sed -i 's/value varchar(255)/value_tag varchar(255)/g' db/mysql/metadata_db.sql
+
+
+  
 
 docker cp db.sql mysql:/tmp/db.sql
 docker cp db/mysql/arborist_db.sql mysql:/tmp/arborist_db.sql 
