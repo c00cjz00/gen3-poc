@@ -1,5 +1,5 @@
-mkdir db/mysql
-mkdir db/psql
+mkdir -p db/mysql
+mkdir -p db/psql
 docker exec -it  postgres su postgres bash -c 'pg_dump --format p --inserts arborist_db > /tmp/arborist_db.sql'
 docker exec -it  postgres su postgres bash -c 'pg_dump --format p --inserts fence_db > /tmp/fence_db.sql'
 docker exec -it  postgres su postgres bash -c 'pg_dump --format p --inserts indexd_db > /tmp/indexd_db.sql'
