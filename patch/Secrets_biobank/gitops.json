@@ -1,0 +1,296 @@
+{
+  "gaTrackingId": "UA-119127212-1",
+  "components": {
+    "appName": "生醫服務入口平台",
+    "index": {
+      "introduction": {
+        "heading": "生醫服務入口平台",
+        "text": "LIONS Data Framework. 整合生醫領域資料，串接各類生醫研究常用資料庫的API，提供單一入口平臺，讓研究人員可以同時查詢多種資料庫.",
+        "link": "/submission"
+      },
+      "buttons": [
+        {
+          "name": "Define Data Field",
+          "icon": "data-field-define",
+          "body": "The NIAID Data Ecosystem defines the data in a general way. Please study the dictionary before you start browsing.",
+          "link": "/DD",
+          "label": "Learn more"
+        },
+        {
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "The Exploration Page provides insight and a clear overview of selected properties.",
+          "link": "/explorer",
+          "label": "Explore data"
+        },
+        {
+          "name": "Access Data",
+          "icon": "data-access",
+          "body": "An interactive interface provides the ability to query all nodes and properties in the data model.",
+          "link": "/query",
+          "label": "Query data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
+          "link": "#hostname#workspace/",
+          "label": "Run analysis"
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "表單樣版"
+        },
+        {
+          "icon": "exploration",
+          "link": "/explorer",
+          "color": "#a2a2a2",
+          "name": "瀏覽"
+        },
+        {
+          "icon": "analysis",
+          "link": "#hostname#php/",
+          "color": "#a2a2a2",
+          "name": "Apps"
+        },
+        {
+          "icon": "query",
+          "link": "/query",
+          "color": "#a2a2a2",
+          "name": "搜尋"
+        },
+        {
+          "icon": "workspace",
+          "link": "#hostname#workspace/",
+          "color": "#a2a2a2",
+          "name": "計算區塊"
+        },
+        {
+          "icon": "profile",
+          "link": "/identity",
+          "color": "#a2a2a2",
+          "name": "設定檔"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "/",
+          "name": "首頁"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "上傳資料"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "文件"
+        }
+      ]
+    },
+    "login": {
+      "title": "生醫服務入口平台",
+      "subTitle": "Explore, Analyze, and Share Data",
+      "text": "LIONS Data Framework. 整合生醫領域資料，串接各類生醫研究常用資料庫的API，提供單一入口平臺，讓研究人員可以同時查詢多種資料庫.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "0203126@narlabs.org.tw"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      }
+    ]
+  },  
+  
+  "dataExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "count",
+        "title": "Projects"
+      },
+      "node_id": {
+        "chartType": "count",
+        "title": "Experiments"
+      },
+      "node_id": {
+        "chartType": "count",
+        "title": "Cases"
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
+      },
+      "race": {
+        "chartType": "bar",
+        "title": "Race"
+      }
+    },
+    "filters": {
+      "tabs": [
+		{
+            "title": "Projects",
+            "fields": [
+              "project_id",
+            "gender"
+            ]
+          }, 	  
+        {
+          "title": "Case",
+          "fields":[
+            "project_id",
+            "gender",
+            "race",
+            "ethnicity"
+          ]
+        },
+		{
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format"
+          ]
+        }		
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+    "dropdowns": {
+      "download": {
+        "title": "Download"
+      }
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download All Clinical",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "clinical.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export To Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+    "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [
+        { "field": "disease_type", "name": "Disease type" },
+        { "field": "primary_site", "name": "Site where samples were collected"}
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "_case_id",
+        "referenceIdFieldInDataIndex": "_case_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    }
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "data_type": {
+        "chartType": "stackedBar",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+     "buttons": [{
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "dropdowns": {},	
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "case",
+        "resourceIdField": "_case_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    }
+  }
+}
