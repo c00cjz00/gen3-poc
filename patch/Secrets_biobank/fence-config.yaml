@@ -74,8 +74,8 @@ OPENID_CONNECT:
   # in Google to be '{{BASE_URL}}/login/google/login', but expand BASE_URL to
   # whatever you set it to above.
   google:
-    client_id: '921439537085-h0bd7baqj0le02vfvc5hk5g790rfh7ol.apps.googleusercontent.com'
-    client_secret: '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'
+    client_id: '921439537085-jiviuuc62envqe18126tic8is9bmdj5o.apps.googleusercontent.com'
+    client_secret: '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'
     # this is be the allowed redirect back to fence, should not need to change
     redirect_url: '{{BASE_URL}}/login/google/login/'
   #E orcid:
